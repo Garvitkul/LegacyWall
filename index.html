@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Wall - Where Stories Find Their Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><i class="fas fa-feather-alt"></i> Legacy Wall</h1>
+                    <p class="subtitle">Where memories become timeless treasures</p>
+                </div>
+                <button id="addNoteBtn" class="add-note-btn">
+                    <i class="fas fa-book-open"></i> Write Your Story
+                </button>
+            </div>
+            <p class="description">Share your journey, wisdom, moments, and notes with the world. Let your stories inspire and connect with others.</p>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search through memories...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+
+        <div class="notes-container" id="notesContainer">
+            <!-- Stories will be dynamically added here -->
+        </div>
+
+        <div class="signature">by Garvit Kulshrestha</div>
+    </div>
+
+    <!-- Story Template -->
+    <template id="noteTemplate">
+        <div class="note">
+            <div class="note-header">
+                <input type="text" class="note-title" placeholder="Title">
+                <div class="note-actions">
+                    <button class="note-btn save-btn"><i class="fas fa-save"></i> <span class="btn-text">Save</span></button>
+                    <button class="note-btn delete-btn"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+            <textarea class="note-content" placeholder="Share your thoughts, memories, or wisdom... Let your story unfold..."></textarea>
+            <div class="note-footer">
+                <span class="note-date"></span>
+                <span class="note-location"><i class="fas fa-map-marker-alt"></i> <input type="text" placeholder="Where do you stay" class="location-input"></span>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html> 

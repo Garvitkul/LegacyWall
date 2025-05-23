@@ -1,0 +1,369 @@
+:root {
+    --primary-color: #8B4513;
+    --secondary-color: #D2691E;
+    --accent-color: #CD853F;
+    --background-color: #FDF5E6;
+    --note-background: #FFFFFF;
+    --text-color: #2C1810;
+    --shadow-color: rgba(139, 69, 19, 0.1);
+    --gradient-start: #8B4513;
+    --gradient-end: #D2691E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 3.5rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: flex-end;
+    gap: 3.5rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    line-height: 1;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-weight: 300;
+    margin: 0 0 0.3rem 0;
+    font-style: italic;
+    line-height: 1;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.add-note-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    white-space: nowrap;
+}
+
+.add-note-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.search-container {
+    position: relative;
+    margin-bottom: 2rem;
+    width: 90%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -1rem;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 0.8rem 0.8rem 0.8rem 3rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--shadow-color);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    flex: 1;
+}
+
+.note {
+    background-color: var(--note-background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid rgba(139, 69, 19, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.note::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 12px 12px 0 0;
+}
+
+.note:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.note-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    color: var(--primary-color);
+}
+
+.note-title:focus {
+    outline: none;
+    background-color: #f8f9fa;
+}
+
+.note-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.note-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+}
+
+.note-btn:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.save-btn {
+    color: var(--primary-color);
+}
+
+.save-btn .btn-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.save-btn.editing {
+    color: #27AE60;
+}
+
+.save-btn.saved {
+    color: var(--primary-color);
+}
+
+.delete-btn {
+    color: var(--secondary-color);
+}
+
+.note-content {
+    flex-grow: 1;
+    border: none;
+    resize: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-radius: 8px;
+    min-height: 120px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+.note-content:focus {
+    outline: none;
+    background-color: #f8f9fa;
+}
+
+.note-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+.note-date {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+.note-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.location-input {
+    border: none;
+    background: none;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    width: 150px;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.location-input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.location-input::placeholder {
+    color: var(--secondary-color);
+    opacity: 0.7;
+}
+
+.signature {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    opacity: 0.7;
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .header-left {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        margin: 0;
+    }
+
+    .description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .notes-container {
+        grid-template-columns: 1fr;
+    }
+
+    .note {
+        padding: 1.5rem;
+    }
+
+    .signature {
+        margin-top: 1rem;
+    }
+
+    .search-container {
+        width: 95%;
+    }
+} 
